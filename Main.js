@@ -31,8 +31,8 @@ const sessionStore = new MySQLStore({
 }, db);
 
 app.use(session({
-    key: '',
-    secret: '',
+    key: '3h21jk3h12jk5gh5412hkj12h4j3k4h23jk4h1',
+    secret: '7h6j2kl54hjl1g7hghjk23ghk2j5gh57k62ghjg4h',
     store: sessionStore,
     resave: false,
     saveUninitialized: false,
@@ -41,3 +41,11 @@ app.use(session({
         httpOnly: false
     }
 }));
+
+new Router(app, db);
+
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'intel.html'));
+});
+
+app.listen(3000);
